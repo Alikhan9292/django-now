@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+
 class Quiz(models.Model):
     name = models.CharField(max_length=255, verbose_name="Заголовок")
     description = models.TextField(verbose_name="Описание")
@@ -34,18 +35,19 @@ class Quiz(models.Model):
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     text = models.TextField()
+    answers = models.ManyToManyField(Answer)
 
     class Meta:
         verbose_name = 'Вопросы'
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
     text = models.CharField(max_length=255)
     is_correct = models.BooleanField()
 
-
     class Meta:
         verbose_name = 'Ответ'
+
 
 
 class QuizTaker(models.Model):

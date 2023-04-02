@@ -1,0 +1,6 @@
+{% extends 'questions/base.html' %}
+
+{% block content %}
+  <h1>Quiz Results</h1>
+  <p>You scored {{ correct_count }} out of {{ form|length }}</p>
+{% endblock %}

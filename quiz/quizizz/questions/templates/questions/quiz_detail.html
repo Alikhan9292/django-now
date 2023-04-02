@@ -6,28 +6,28 @@
 </head>
 <body>
 <div class="quiz">
-  <form>
+  <form action="{% url 'quiz_detail' %}" method="post">
+    {% csrf_token %}
     <p>Какая команда используется для создания нового Django проекта?</p>
     <input type="radio" name="q1" value="a"> a. python create_project &lt;project_name&gt;<br>
     <input type="radio" name="q1" value="b"> b. python manage.py startapp &lt;app_name&gt;<br>
     <input type="radio" name="q1" value="c"> c. django-admin startproject &lt;project_name&gt;<br>
-    <input type="radio" name="q1" value="d"> d. python manage.py create_project &lt;project_name&gt;<br>
-  </form>
+    <input type="radio" name="q1" value="d"> d. django-admin startapp &lt;app_name&gt;<br>
 
-  <form>
     <p>Какой файл отвечает за маршрутизацию в Django?</p>
     <input type="radio" name="q2" value="a"> a. models.py<br>
     <input type="radio" name="q2" value="b"> b. views.py<br>
     <input type="radio" name="q2" value="c"> c. urls.py<br>
     <input type="radio" name="q2" value="d"> d. settings.py<br>
-  </form>
 
-  <form>
     <p>Какой модуль нужно импортировать для использования встроенного пользовательского аутентификационного приложения Django?</p>
     <input type="radio" name="q3" value="a"> a. django.auth<br>
-    <input type="radio" name="q3" value="b"> b. django.users<br>
+    <input type="radio" name="q3" value="b"> b. django.contrib.auth<br>
     <input type="radio" name="q3" value="c"> c. django.authentication<br>
-    <input type="radio" name="q3" value="d"> d.
+    <input type="radio" name="q3" value="d"> d. django.users<br>
+
+    <input type="submit" value="Отправить ответ">
   </form>
+</div>
 </body>
 </html>

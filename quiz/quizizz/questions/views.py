@@ -4,6 +4,24 @@ from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadReque
 from .models import *
 from django.shortcuts import render, redirect
 from .forms import QuizForm
+from django.shortcuts import render
+from .models import Question, Quiz, Answer
+
+def quiz_detail(request):
+    questions = Question.objects.all()
+    if request.method == 'POST':
+        # Получаем ответы пользователя из запроса и проверяем их
+        correct_count = 0
+        for question in questions:
+            selected_answer = request.POST.get('q{}'.format(question.id))
+            if selected_answer:
+                answer = Answer.objects.get(id=selected_answer)
+                if answer.is_correct:
+                    correct_count += 1
+        return render(request, 'quiz_results.html', {'correct_count': correct_count})
+    else:
+        return render(request, 'quiz.html', {'questions': questions})
+
 
 def contact(request):
     if request.method == 'POST':
