@@ -1,0 +1,11 @@
+{% extends 'questions/base.html' %}
+
+{% block title %}My Blog - Posts{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <h2><a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></h2>
+        <p>{{ post.published_date }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
+    {% endfor %}
+{% endblock %}

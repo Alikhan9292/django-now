@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    {%load questions_tags %}
+    <link type="text/css" href="{% static 'questions/css/style.css' %}"  rel="stylesheet">
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="{% url 'quiz' %}">Главная</a></li>
+    <li><a href="{% url 'about' %}">О нас</a></li>
+    <li><a href="{% url 'contact' %}">Контакты</a></li>
+
+  </ul>
+</nav>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

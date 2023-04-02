@@ -1,0 +1,138 @@
+/* Стили для заголовков */
+
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* Стили для фона и шрифта */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  background-image: url("/static/questions/images/bg.jpg");
+  background-size: cover;
+  color: #333;
+}
+
+/* Стили для навигационного меню */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff578f; /* изменение цвета фона */
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #007bff;
+}
+
+/* Стили для контента */
+
+.content {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: blue; /* изменение цвета текста */
+}
+
+
+.content ul {
+  margin-bottom: 20px;
+}
+
+.content ul li {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.content ul li:before {
+  content: "•";
+  display: inline-block;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+/* Стили для формы контактов */
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #fff;
+  color: #007bff;
+}

@@ -1,0 +1,12 @@
+{% extends 'questions/base.html' %}
+{% block content %}
+<main>
+    <h2>Наша викторина.</h2>
+    <p>Проверьте свои знания с помощью нашей веселой викторины! Отвечайте на вопросы по самым разным темам и посмотрите, чем вы отличаетесь от других.</p>
+    <a href="{% url 'quiz_detail' %}">Начать викторину!</a>
+     {% for post in posts %}
+
+        <div>{{ post.name }}</div>
+     {% endfor %}
+</main>
+{% endblock %}
